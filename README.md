@@ -1,7 +1,7 @@
 # AndroidSampleTest
 I display some Android demos.
 
-# 其中包括的demo有：
+### 其中包括的demo有：
 
 1. 四种类型的应用启动方式
 2. 动画
