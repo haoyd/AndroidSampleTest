@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProviderDemo</string>
+    <string name="action_settings">设置</string>
+    <string name="action_from_native">本地获取</string>
+    <string name="action_from_sim">SIM卡获取</string>
+    <string name="action_data_put">存放数据</string>
+    <string name="action_data_pick">拿取数据</string>
+
+</resources>

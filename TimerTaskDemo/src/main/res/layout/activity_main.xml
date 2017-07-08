@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/darker_gray"
+    tools:context="com.zhimazg.timertask.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/pro_show"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:progress="90"
+        android:progressDrawable="@drawable/layer_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="开始执行"
+        android:textSize="20sp"/>
+
+
+</LinearLayout>

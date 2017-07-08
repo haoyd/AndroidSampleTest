@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--from hyd-->
+    <color name="item_color">#FFFFFF</color>
+    <color name="line_color">#C0C0C0</color>
+    <color name="yellow">#FF8000</color>
+    <color name="green">#00FF00</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#C0C0C0</color>
+    <color name="blue">#5582C2</color>
+    <color name="dipblue">#004080</color>
+    <color name="seablue">#0ACAB6</color>
+    <color name="type_btnNor">#429AE7</color>
+    <color name="type_btnPress">#6099E9</color>
+    <color name="titleColor">#21496B</color>
+    <color name="transparent_h">#8000000F</color>
+    <color name="simple_purple">#B53BB4</color>
+    <color name="dip_purple">#9F059D</color>
+    <color name="black">#000000</color>
+
+    - <!--  PagerSlidingTabStrip-->
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="underline_tab_strip">#00eeed</color>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhimazg.widgetdemo.controller.activity.MainActivity">
+
+    <Button
+        android:id="@+id/btn_main_jump_request"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="加载测试"/>
+
+    <Button
+        android:id="@+id/btn_main_title_tip"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="标题标签测试"/>
+
+    <Button
+        android:id="@+id/btn_main_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="弹窗"/>
+
+    <Button
+        android:id="@+id/btn_main_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="下拉列表"/>
+
+
+    <Button
+        android:id="@+id/btn_main_spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="下拉列表2" />
+
+
+</LinearLayout>

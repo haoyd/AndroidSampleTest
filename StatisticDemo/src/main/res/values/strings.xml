@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StatisticDemo</string>
+
+
+    <string name="UMENG_APPKEY">57319f27e0f55a5d5c0029e2</string>
+    <string name="UMENG_CHANNEL">360</string>
+    <string name="UMENG_event1">event1</string>
+    <string name="UMENG_event2">event2</string>
+    <string name="UMENG_event3">event3</string>
+    <string name="UMENG_event4">event4</string>
+</resources>

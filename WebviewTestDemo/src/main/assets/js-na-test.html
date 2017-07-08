@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 5px;
+        }
+
+        #log-container {
+            border: 1px solid #cccccc;
+            overflow: auto;
+            height: 300px;
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        input {
+            border: 1px solid #cccccc;
+        }
+
+        button {
+            background-color: dodgerblue;
+            color: #ffffff;
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h2>JS-NA测试工具</h2>
+<hr>
+<p>调用NA接口:</p>
+<p>
+    type: <input type="text" id="type-input"> <br>
+    data: <input type="text" id="data-input">
+    <button type="button" onclick="invoke()">调用</button>
+</p>
+
+<p>注册JS接口:</p>
+<p>
+    接口名: <input type="text" id="api-input"> <br>
+    返回内容: <input type="text" id="return-input">
+    <button type="button" onclick="registerApi()">注册</button>
+</p>
+
+<p>
+    <button type="button" onclick="testNaCom()">测试ZmdjNaCom</button>
+    <button type="button" onclick="testCom()">测试ZmdjCom</button>
+    <button type="button" onclick="testBridge()">测试ZmdjCom.Bridge</button>
+</p>
+
+<p>控制台: <button type="button" onclick="clearLog()">清空</button></p>
+<div id="log-container">
+
+</div>
+
+<script>
+    var logContainer = document.getElementById('log-container');
+    function onNativeInit() {
+        printLog('执行 onNativeInit...');
+    }
+
+    function printLog(msg) {
+        var p = document.createElement('p');
+        p.appendChild(document.createTextNode(msg));
+        logContainer.appendChild(p);
+    }
+
+    function clearLog() {
+        logContainer.innerHTML = '';
+    }
+
+    function invoke() {
+        var type = document.getElementById('type-input').value;
+        var data = document.getElementById('data-input').value;
+        naInvoke(type, data);
+    }
+
+    function naInvoke(type, data) {
+        ZmdjCom.Bridge.jsGetData({
+            type: type,
+            data: data
+        }, function(data) {
+            printLog('调用NA接口返回响应: ' + JSON.stringify(data));
+        });
+    }
+
+    var ZmdjComApi={};
+
+    function registerApi() {
+        var name = document.getElementById('api-input').value;
+        var returnString = document.getElementById('return-input').value;
+        ZmdjComApi[name] = function(message) {
+            printLog('接口' + name + '被调用,传入参数:' + message + ', 返回:' + returnString);
+            if (name == 'BACK') {
+                naInvoke('BACK', {});
+                printLog('调用NA的BACK接口');
+            }
+            return JSON.stringify({msg: returnString});
+        };
+        printLog('接口[' + name + ']注册成功, 可通过NA调用');
+    }
+
+    function testNaCom() {
+        printLog('ZmdjNaCom对象: ' + window.ZmdjNaCom);
+    }
+    function testCom() {
+        printLog('ZmdjCom对象: ' + window.ZmdjCom);
+    }
+    function testBridge() {
+        printLog('ZmdjCom.Bridge对象: ' + window.ZmdjCom.Bridge);
+    }
+
+
+    window.onerror = function(e) {
+        printLog(e);
+    };
+</script>
+</body>
+</html>

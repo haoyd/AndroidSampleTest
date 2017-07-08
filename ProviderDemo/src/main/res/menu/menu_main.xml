@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zhimazg.providerdemo.MainActivity">
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_from_native"
+        android:orderInCategory="100"
+        android:title="@string/action_from_native"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_from_sim"
+        android:orderInCategory="100"
+        android:title="@string/action_from_sim"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_data_put"
+        android:orderInCategory="100"
+        android:title="@string/action_data_put"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_data_pick"
+        android:orderInCategory="100"
+        android:title="@string/action_data_pick"
+        app:showAsAction="never" />
+
+
+
+
+
+
+
+</menu>

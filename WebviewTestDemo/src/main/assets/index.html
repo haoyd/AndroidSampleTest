@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function wave() {
+            <!--alert("安卓说：" + msg);-->
+            alert("安卓调用web");
+        }
+
+        function wave2(msg) {
+            alert("安卓说：" + msg);
+            return 3；
+        }
+
+        function show() {
+//            alert("hello world");
+            document.getElementById("text2").innerHTML = "你好吗";
+        }
+    </script>
+
+</head>
+<body>
+
+    <div id="div" style="width: 100%; height: 50px; background: gray"; >
+        <span id="text" onclick="wave()" style="width: 3000px; height: 100%; text-align: center">请点击</span>
+        <span id="text2" onclick="window.demo.clickOnAndroid('你好，我是web')" style="width: 100%; height: 100%; text-align: center">运行Android代码</span>
+    </div>
+
+</body>
+</html>

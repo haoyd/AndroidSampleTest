@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+    defaultConfig {
+        applicationId "com.zhimazg.configdemo"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../keystore.jks")
+            storePassword "123456"
+            keyAlias "hao"
+            keyPassword "123456"
+        }
+        release {
+            storeFile file("../keystore.jks")
+            storePassword "123456"
+            keyAlias "hao"
+            keyPassword "123456"
+        }
+    }
+
+
+    buildTypes {
+        release {
+            //不需混淆设置为false
+            minifyEnabled false
+            //移除无用的资源文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField("boolean", "API_TEST","false")
+            buildConfigField "int", "TAG", "123"
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            buildConfigField("boolean", "API_TEST","true")
+            buildConfigField("int", "TAG","456")
+        }
+
+
+    }
+
+    productFlavors {
+        小米 {
+            minSdkVersion 16
+            applicationId 'com.zhimazg.configdemo'
+            targetSdkVersion 23
+            manifestPlaceholders = [
+                    CHANEL : "小米"
+            ]
+        }
+        应用宝 {
+            minSdkVersion 16
+            applicationId 'com.zhimazg.configdemo'
+            targetSdkVersion 23
+        }
+    }
+
+    //打包开始时，lint运行将有可能发生错误，当有异常发生时，此设置将忽略警告，继续运行脚本，若忽略，打包过程将被强行终止
+    lintOptions {
+        abortOnError false
+    }
+
+    //签名配置
+    signingConfigs {
+        release {
+            keyAlias 'ishequ'
+            keyPassword '&*()0987yhn'
+            storeFile file('../keystore.jks')
+            storePassword 'ishequ^%$#@!~123456tgbrfv'
+        }
+    }
+
+    //编码配置
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+
+    //打包重命名算法，输出XXX_Android_v2.0_20160127_baidu.apk到脚本前配置的输出目录当中
+    android.applicationVariants.all {
+//        variant -> def file = variant.outputs[0].outputFile
+//        if(variant.buildType.name.equals('release')){
+//            variant.outputs[0].outputFile = new File(appReleaseDir + '/','Gradle测试-' + appVersionName +getDate()+ '_' + variant.productFlavors[0].name + '.apk')
+//        }
+
+            //这个是可用的
+        variant -> variant.outputs.each {
+            output -> output.outputFile = new File(output.outputFile.parent +"/${variant.buildType.name}",
+                    """Config测试-${variant.buildType.name}-v${variant.versionName}-${variant.productFlavors[0].name}.apk""".toLowerCase())
+        }
+
+
+    }
+
+
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    testCompile 'junit:junit:4.12'
+}

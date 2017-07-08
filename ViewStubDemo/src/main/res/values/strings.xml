@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ViewStubDemo</string>
+    <string name="action_settings">显示</string>
+</resources>
