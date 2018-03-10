@@ -1,4 +1,4 @@
-package com.zhimazg.webviewtest;
+package com.zhimazg.webviewtest.controller;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import com.zhimadj.utils.ToastBox;
 import com.zhimadj.utils.webview.WVAObject;
 import com.zhimadj.utils.webview.WebViewCallback;
 import com.zhimadj.utils.webview.ZmdjWebView;
+import com.zhimazg.webviewtest.R;
+import com.zhimazg.webviewtest.model.MyWebApi;
 
 import org.codehaus.jackson.JsonNode;
 import org.json.JSONException;

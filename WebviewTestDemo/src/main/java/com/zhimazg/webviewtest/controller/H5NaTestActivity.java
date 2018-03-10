@@ -1,4 +1,4 @@
-package com.zhimazg.webviewtest;
+package com.zhimazg.webviewtest.controller;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +13,10 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+import com.zhimazg.webviewtest.R;
+
+public class H5NaTestActivity extends Activity {
+
 
     private WebView webView;
 
@@ -25,7 +28,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_h5_na_test);
 
         webView = (WebView) findViewById(R.id.webview);
         button = (Button) findViewById(R.id.btn);
@@ -37,8 +40,8 @@ public class MainActivity extends Activity {
         webSettings.setSaveFormData(false);
         webSettings.setJavaScriptEnabled(true);
         webSettings.setSupportZoom(false);
-        webView.setWebChromeClient(new MyWebChromeClient());
-        webView.addJavascriptInterface(new DemoJavaScriptInterface(), "demo");
+        webView.setWebChromeClient(new H5NaTestActivity.MyWebChromeClient());
+        webView.addJavascriptInterface(new H5NaTestActivity.DemoJavaScriptInterface(), "demo");
         webView.loadUrl("file:///android_asset/index.html");
 
 //        String result = "";
@@ -72,7 +75,7 @@ public class MainActivity extends Activity {
 //                    webView.loadUrl("javascript:wave()");
                     Log.d("tag", "web页面执行了Android回调");
 //                    Toast.makeText(MainActivity.this, "Web端点击了页面", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(MainActivity.this, "webView说：" + msg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(H5NaTestActivity.this, "webView说：" + msg, Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -88,5 +91,4 @@ public class MainActivity extends Activity {
 
         }
     }
-
 }

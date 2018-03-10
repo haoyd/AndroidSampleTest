@@ -18,22 +18,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".controller.MainActivity">
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         <activity
-            android:name=".SecondActivity"
+            android:name=".controller.SecondActivity"
             android:theme="@style/Base.Theme.AppCompat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".controller.H5NaTestActivity"></activity>
     </application>
 
 </manifest>

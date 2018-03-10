@@ -5,17 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zhimazg.webviewtest.MainActivity">
+    tools:context="com.zhimazg.webviewtest.controller.MainActivity">
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_weight="1"
+    <ListView
+        android:id="@+id/lv_main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"></WebView>
+        android:layout_height="match_parent"></ListView>
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="运行JS代码"/>
 </LinearLayout>

@@ -5,10 +5,11 @@ android {
 
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tools_version
+    flavorDimensions "default"
 
     defaultConfig {
         applicationId "com.zhimazg.UnitTesst"
-        minSdkVersion 18
+        minSdkVersion min_sdk_version
         targetSdkVersion target_sdk_version
         versionCode 1
         versionName "1.0"
@@ -29,7 +30,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:27.0.0'
     testCompile 'junit:junit:4.12'
 
     /**

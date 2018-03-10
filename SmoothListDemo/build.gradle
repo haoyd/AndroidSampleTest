@@ -5,6 +5,7 @@ android {
 
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tools_version
+    flavorDimensions "default"
     defaultConfig {
         applicationId "com.sample.SmoothList"
         minSdkVersion min_sdk_version

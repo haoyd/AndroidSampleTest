@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_container"
+    tools:context="com.sample.dimdemo.GradualChangeActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_gradual_change"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        android:gravity="center">
+
+        <View
+            android:id="@+id/title_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:alpha="0"></View>
+
+        <TextView
+            android:id="@+id/tv_gradual_change"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/grey"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAllCaps="false"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_gradual_change"
+        android:paddingLeft="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="我是第2个item"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="我是第2个item"/>
+
+    </LinearLayout>
+
+    <com.sample.dimdemo.CustomScrollView
+        android:id="@+id/scroll_gradual_change"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_gradual_change"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"
+                android:gravity="center"
+                android:text="全屏模式"
+                android:textSize="30sp"
+                android:onClick="setModeTranscluent"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"
+                android:gravity="center"
+                android:text="顶部着色模式"
+                android:textSize="30sp"
+                android:onClick="setModeColourBar"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/yellow"></TextView>
+        </LinearLayout>
+
+    </com.sample.dimdemo.CustomScrollView>
+</android.support.constraint.ConstraintLayout>

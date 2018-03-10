@@ -1,4 +1,4 @@
-package com.zhimazg.webviewtest;
+package com.zhimazg.webviewtest.model;
 
 import android.app.Activity;
 

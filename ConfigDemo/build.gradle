@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion compile_sdk_version
     buildToolsVersion build_tools_version
+    flavorDimensions "default"
     defaultConfig {
         applicationId "com.zhimazg.configdemo"
         minSdkVersion min_sdk_version
@@ -91,20 +92,20 @@ android {
 
 
     //打包重命名算法，输出XXX_Android_v2.0_20160127_baidu.apk到脚本前配置的输出目录当中
-    android.applicationVariants.all {
+//    android.applicationVariants.all {
 //        variant -> def file = variant.outputs[0].outputFile
 //        if(variant.buildType.name.equals('release')){
 //            variant.outputs[0].outputFile = new File(appReleaseDir + '/','Gradle测试-' + appVersionName +getDate()+ '_' + variant.productFlavors[0].name + '.apk')
 //        }
-
-            //这个是可用的
-        variant -> variant.outputs.each {
-            output -> output.outputFile = new File(output.outputFile.parent +"/${variant.buildType.name}",
-                    """Config测试-${variant.buildType.name}-v${variant.versionName}-${variant.productFlavors[0].name}.apk""".toLowerCase())
-        }
-
-
-    }
+//
+//            这个是可用的
+//        variant -> variant.outputs.each {
+//            output -> output.outputFile = new File(output.outputFile.parent +"/${variant.buildType.name}",
+//                    """Config测试-${variant.buildType.name}-v${variant.versionName}-${variant.productFlavors[0].name}.apk""".toLowerCase())
+//        }
+//
+//
+//    }
 
 
 }
@@ -118,6 +119,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:27.0.0'
     testCompile 'junit:junit:4.12'
 }
