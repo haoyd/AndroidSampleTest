@@ -16,6 +16,7 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
+    private Activity mActivity;
     private ListView listView;
 
     private List<String> pages;
@@ -26,6 +27,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mActivity = this;
 
         initView();
         initData();
@@ -43,6 +45,7 @@ public class MainActivity extends Activity {
         pages = new ArrayList<>();
         pages.add("H5-NA交互测试");
         pages.add("直接打开Url");
+        pages.add("WebView设置");
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pages);
         listView.setAdapter(adapter);
@@ -60,6 +63,11 @@ public class MainActivity extends Activity {
                     case 1: {
                         Uri uri = Uri.parse("http://www.baidu.com");
                         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                        break;
+                    }
+                    case 2: {
+                        Intent intent = new Intent(mActivity, WebviewActivity.class);
                         startActivity(intent);
                         break;
                     }
