@@ -24,7 +24,8 @@ public class WebviewActivity extends Activity {
     }
 
     private void loadData() {
-        loadHtmlText();
+//        loadHtmlText();
+        loadCompanyUrl();
 
     }
 
@@ -34,5 +35,9 @@ public class WebviewActivity extends Activity {
     private void loadHtmlText() {
         String summary = "<html><body>You scored <b>192</b> points.</body></html>";
         webView.loadData(summary, "text/html", "UTF-8");
+    }
+
+    private void loadCompanyUrl() {
+        webView.loadUrl("http://api.supply.zhimazg.com/home");
     }
 }
