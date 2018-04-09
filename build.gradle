@@ -1,6 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = '1.1.51'
+
     repositories {
         jcenter()
         google()
@@ -13,6 +15,7 @@ buildscript {
 
         //申请运行时权限
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -43,3 +46,4 @@ task wrapper(type: Wrapper) {
 //dexOptions {
 //    incremental true
 //}
+
