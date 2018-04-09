@@ -18,6 +18,7 @@
       <module fileurl="file://$PROJECT_DIR$/HotFixDemo/HotFixDemo.iml" filepath="$PROJECT_DIR$/HotFixDemo/HotFixDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaTest/JavaTest.iml" filepath="$PROJECT_DIR$/JavaTest/JavaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/KeepAlive/KeepAlive.iml" filepath="$PROJECT_DIR$/KeepAlive/KeepAlive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KotlinTest/KotlinTest.iml" filepath="$PROJECT_DIR$/KotlinTest/KotlinTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/LinkOpenApp/LinkOpenApp.iml" filepath="$PROJECT_DIR$/LinkOpenApp/LinkOpenApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListExpandDemo/ListExpandDemo.iml" filepath="$PROJECT_DIR$/ListExpandDemo/ListExpandDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/ListLocationDemo/ListLocationDemo.iml" filepath="$PROJECT_DIR$/ListLocationDemo/ListLocationDemo.iml" />

@@ -49,5 +49,5 @@ I display some Android demos.
 43. SeekBar
 44. ViewPager + Fragment
 45. 无用测试
-
+46. Kotlin Sample
 
