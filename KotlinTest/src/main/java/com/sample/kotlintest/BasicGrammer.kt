@@ -160,11 +160,138 @@ class BasicGrammer {
         }
     }
 
+    // ******************************************************************************************** 比较两个数字
+
+    /**
+     * kotlin中没有基础数据类型，只有封装数据类型
+     * === 比较对象地址
+     * ==  比较数据大小
+     */
+    fun compareNum() {
+        val a = 100
+        println(a === a)        // 结果为true，对象地址相等，值也相等
+
+        //经过了装箱，创建了两个不同的对象
+        val boxedA: Int? = a
+        val anotherBoxedA: Int? = a
+
+        //虽然经过了装箱，但是值是相等的，都是10000
+        println(boxedA === anotherBoxedA) //  false，值相等，对象地址不一样
+        println(boxedA == anotherBoxedA) // true，值相等
+    }
+
+    // ******************************************************************************************** 数据类型转换
+
+    /**
+     * 较小的数据类型并不能够隐式转换为较大的数据类型，需要用toInt()进行转换
+     */
+    fun convertType() {
+        val b: Byte = 1
+//        val i: Int = b    这是错误的
+        val i: Int = b.toInt()
+    }
 
 
+    // ******************************************************************************************** 数组
+
+    fun arrayTest() {
+        val a = arrayOf(1, 2, 3)
+
+        // []代表调用成员函数get set
+
+        //除了Array， 还有ByteArray  ShortArray  IntArray，用来表示各个类型的数组，省去了装箱操作，因此效率更高。
+        val x: IntArray = intArrayOf(1, 2, 3)
+    }
+
+    // ******************************************************************************************** 字符串
+
+    fun stringTest() {
+        /**
+         * 可以用"""支持多行字符串
+         */
+
+        val text = """
+            dkfjldfjlk
+            ldkjfldjflkd
+            ldkjfldjflj
+            """
+        println(text)   // 输出有一些前置空格
+
+        val text2 = """
+            ldjfldfjlk
+            dkjfldjfl
+            lkjdfljkdfl
+            """.trimMargin()
+        println(text2)
+    }
+
+    // ******************************************************************************************** 条件判断
+
+    fun ifTest() {
+        var max :Int
+        if (1 < 2) max = 2
+
+        // 作为表达式
+        max = if (1 < 2) 2 else 1
+    }
+
+    fun whenTest() {
+        var x = 1;
+
+        when (x) {
+            1       ->    print("x = 1")
+            2       ->    print("x = 2")
+            else    ->    print("x不是1，也不是2")
+        }
+
+        when (x) {
+            0, 1 -> println("x == 0 or x == 1")
+            else -> println("otherwise")
+        }
+
+        when (x) {
+            1 -> println("x == 1")
+            2 -> println("x == 2")
+            else -> { // 注意这个块
+                println("x 不是 1 ，也不是 2")
+            }
+        }
+
+        when (x) {
+            in 0..10 -> println("x 在该区间范围内")
+            else -> println("x 不在该区间范围内")
+        }
+
+        val items = setOf("apple", "banana", "kiwi")
+        when {
+            "orange" in items -> println("juicy")
+            "apple" in items -> println("apple is fine too")
+        }
+    }
 
 
+    // ******************************************************************************************** 循环控制
 
+    fun iteratorTest() {
+        /**
+         * for循环语法：for (item in collection) print(item)
+         */
+        var ints = arrayOf(1, 2, 3)
+
+        for (item: Int in ints) {
+            // ……
+        }
+
+        // 通过索引遍历数组
+        for (i in ints.indices) {
+            print(ints[i])
+        }
+
+        // 在区间上遍历"会编译成优化的实现而不会创建额外对象
+        for ((index, value) in ints.withIndex()) {
+            println("the element at $index is $value")
+        }
+    }
 
 
 }
