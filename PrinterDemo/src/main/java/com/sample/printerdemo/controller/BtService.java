@@ -93,7 +93,7 @@ public class BtService extends IntentService {
         BufferedInputStream bis;
         try {
             bis = new BufferedInputStream(getAssets().open(
-                    "icon_empty_bg.bmp"));
+                    "aaa.png"));
         } catch (Exception e) {
             e.printStackTrace();
             return;

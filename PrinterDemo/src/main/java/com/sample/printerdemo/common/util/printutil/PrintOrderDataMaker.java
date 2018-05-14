@@ -97,6 +97,9 @@ public class PrintOrderDataMaker implements PrintDataMaker {
             printer.printLineFeed();
             printer.printLineFeed();
             printer.printLineFeed();
+            printer.printLineFeed();
+            printer.printLineFeed();
+            printer.printLineFeed();
             printer.feedPaperCutPartial();
 
             data.add(printer.getDataAndClose());
