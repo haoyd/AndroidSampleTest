@@ -46,6 +46,7 @@ public class MainActivity extends Activity {
         pages.add("H5-NA交互测试");
         pages.add("直接打开Url");
         pages.add("WebView设置");
+        pages.add("WebView适应内容高度");
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pages);
         listView.setAdapter(adapter);
@@ -70,6 +71,9 @@ public class MainActivity extends Activity {
                         Intent intent = new Intent(mActivity, WebviewActivity.class);
                         startActivity(intent);
                         break;
+                    }
+                    case 3: {
+                        startActivity(new Intent(mActivity, ListWebviewActivity.class));
                     }
                 }
             }

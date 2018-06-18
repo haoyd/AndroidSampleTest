@@ -6,7 +6,6 @@ package com.sample.gofdemo.代理模式;
 
 public class XiaoHan implements GiftGive {
 
-
     private MengChen mengChen;
 
     public XiaoHan(String name) {

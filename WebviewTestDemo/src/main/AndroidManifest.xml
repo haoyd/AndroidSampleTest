@@ -27,9 +27,10 @@
         </activity>
         <activity
             android:name=".controller.SecondActivity"
-            android:theme="@style/Base.Theme.AppCompat"></activity>
+            android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name=".controller.H5NaTestActivity" />
-        <activity android:name=".controller.WebviewActivity"></activity>
+        <activity android:name=".controller.WebviewActivity" />
+        <activity android:name=".controller.ListWebviewActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.zhimazg.webviewtest.controller;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -41,6 +43,7 @@ public class H5NaTestActivity extends Activity {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setSupportZoom(false);
         webView.setWebChromeClient(new H5NaTestActivity.MyWebChromeClient());
+        webView.setWebViewClient(new MyWebViewClient());
         webView.addJavascriptInterface(new H5NaTestActivity.DemoJavaScriptInterface(), "demo");
         webView.loadUrl("file:///android_asset/index.html");
 
@@ -52,9 +55,11 @@ public class H5NaTestActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String msg = "Android调用WebView方法";
+
 //                webView.loadUrl("javascript:wave('你好，我叫安卓')");
-//                webView.loadUrl("javascript:wave()");
-                webView.loadUrl("javascript:wave2('你好，我叫安卓')");
+                webView.loadUrl("javascript:wave()");
+//                webView.loadUrl("javascript:wave2('你好，我叫安卓')");
 
             }
         });
@@ -85,10 +90,25 @@ public class H5NaTestActivity extends Activity {
     final class MyWebChromeClient extends WebChromeClient {
         @Override
         public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-//            Log.d("tag", message);
-//            result.confirm();
-            return super.onJsAlert(webView, url, message, result);
+            Log.d("onJsAlert", message);
+            result.confirm();
 
+            new AlertDialog.Builder(H5NaTestActivity.this)
+                    .setTitle("WebAlert")
+                    .setMessage(message)
+                    .setNegativeButton("确定", null)
+                    .show();
+
+
+            return super.onJsAlert(webView, url, message, result);
+        }
+    }
+
+    final class MyWebViewClient extends WebViewClient {
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
         }
     }
 }

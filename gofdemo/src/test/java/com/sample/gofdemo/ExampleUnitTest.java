@@ -66,7 +66,7 @@ public class ExampleUnitTest {
 //        decoration();
 
         //代理模式
-//        proxyClient();
+        proxyClient();
 
         //工厂方法模式
 //        factoryMethodClient();
