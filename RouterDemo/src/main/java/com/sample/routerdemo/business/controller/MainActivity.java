@@ -1,7 +1,8 @@
 package com.sample.routerdemo.business.controller;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.sample.routerdemo.R;
 
@@ -11,5 +12,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void FirstActivity(View view) {
+//        RouterManager.startFristPage();
+    }
+
+    public void SecondActivity(View view) {
+//        RouterManager.startSecondPage();
+    }
+
+    public void ThirdActivity(View view) {
+//        RouterManager.startThirdPage();
     }
 }
