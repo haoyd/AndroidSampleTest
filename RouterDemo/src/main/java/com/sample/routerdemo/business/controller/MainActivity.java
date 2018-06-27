@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sample.routerdemo.R;
+import com.sample.routerdemo.router.RouterManager;
 
+@Route(path = RouterManager.PAGE_MAIN)
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void FirstActivity(View view) {
-//        RouterManager.startFristPage();
+        RouterManager.startFirstPage();
     }
 
     public void SecondActivity(View view) {
-//        RouterManager.startSecondPage();
+        RouterManager.startSecondPage();
     }
 
     public void ThirdActivity(View view) {
-//        RouterManager.startThirdPage();
+        RouterManager.startThirdPage();
     }
 }
