@@ -1,8 +1,8 @@
 package com.zhimazg.asynctask;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected boolean isGoing = true;
     protected int num = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

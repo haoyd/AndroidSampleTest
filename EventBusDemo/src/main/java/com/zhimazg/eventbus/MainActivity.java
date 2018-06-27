@@ -31,11 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private void initFindView() {
         show = (TextView) findViewById(R.id.show);
         jump = (Button) findViewById(R.id.jump);
-
     }
 
     private void registEvent() {
@@ -83,4 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
 }
+
