@@ -1,5 +1,6 @@
 package com.sample.suningarchidemo.phases1.business;
 
+import com.sample.suningarchidemo.common.Printer;
 import com.sample.suningarchidemo.phases1.network.LoginNetService;
 import com.sample.suningarchidemo.phases1.network.LoginNetServiceImpl;
 import com.sample.suningarchidemo.phases1.network.OnNetCallbackListener;
@@ -12,7 +13,7 @@ public class LoginPage {
     private LoginStorageService loginStorageService;
 
     public LoginPage() {
-        System.out.println("初始化登录页面");
+        Printer.print("初始化登录页面", true);
 
         loginNetService = new LoginNetServiceImpl();
         loginStorageService = new LoginStorageServiceImpl();
@@ -45,9 +46,9 @@ public class LoginPage {
         loginNetService.login("18512345678", "8888", new OnNetCallbackListener() {
             @Override
             public void onSuccess(String result) {
-                System.out.println("登录成功");
+                Printer.print("登录成功", true);
                 loginStorageService.saveToken(result);
-                System.out.println("跳转到主页面");
+                Printer.print("跳转到主页面");
             }
 
             @Override
