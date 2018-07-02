@@ -16,7 +16,7 @@ public class RouterManager {
 
     public static void startSecondPage() {
         ARouter.getInstance().build(PAGE_SECOND)
-                .withString("msg", "I am from MainPage !")
+                .withString("message", "I am from MainPage !")
                 .navigation();
 
     }

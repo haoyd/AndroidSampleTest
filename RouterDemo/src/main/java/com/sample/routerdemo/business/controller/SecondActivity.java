@@ -15,7 +15,7 @@ import com.sample.routerdemo.router.RouterManager;
 @Route(path = RouterManager.PAGE_SECOND)
 public class SecondActivity extends AppCompatActivity {
 
-    @Autowired
+    @Autowired(name = "message")
     public String msg;
 
     @Override

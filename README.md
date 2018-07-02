@@ -51,4 +51,5 @@ I display some Android demos.
 45. 无用测试
 46. Kotlin Sample
 47. Router
+48. SuningArchiSample
 
