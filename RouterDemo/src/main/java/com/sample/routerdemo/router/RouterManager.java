@@ -1,5 +1,7 @@
 package com.sample.routerdemo.router;
 
+import android.os.ResultReceiver;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.sample.routerdemo.business.model.Person;
 
@@ -10,10 +12,12 @@ public class RouterManager {
     public static final String PAGE_SECOND = "/Main/SecondPage";
     public static final String PAGE_THIRD = "/Main/ThirdPage";
     public static final String PAGE_FOURTH = "/Main/FourthPage";
+    public static final String PAGE_FIFTH = "/Main/FifthPage";
 
     public static void startMainPage() {
         ARouter.getInstance()
                 .build(PAGE_MAIN)
+                .withString("msg", "hello world")
                 .navigation();
     }
 
@@ -42,5 +46,9 @@ public class RouterManager {
                 .navigation();
     }
 
+    public static void startFifthPage(ResultReceiver resultReceiver) {
+        ARouter.getInstance().build(PAGE_FIFTH)
+                .navigation();
+    }
 
 }
