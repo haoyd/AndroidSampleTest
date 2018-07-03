@@ -28,4 +28,8 @@ public class MainActivity extends AppCompatActivity {
     public void ThirdActivity(View view) {
         RouterManager.startThirdPage();
     }
+
+    public void fourthActivity(View view) {
+        RouterManager.startFourthPage();
+    }
 }

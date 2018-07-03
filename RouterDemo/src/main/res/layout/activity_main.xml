@@ -28,6 +28,15 @@
         android:text="ThirdActivity"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="fourthActivity"
+        android:text="fourthActivity"
+        android:textAllCaps="false"/>
+
+
+
 
 
 </LinearLayout>

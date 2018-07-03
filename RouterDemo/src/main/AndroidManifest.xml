@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".business.controller.FirstActivity" />
         <activity android:name=".business.controller.SecondActivity" />
-        <activity android:name=".business.controller.ThirdActivity"></activity>
+        <activity android:name=".business.controller.ThirdActivity" />
+        <activity android:name=".business.controller.FourthActivity"></activity>
     </application>
 
 </manifest>
