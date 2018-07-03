@@ -14,4 +14,11 @@
         android:text="showMsg"
         android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="jumpToMain"
+        android:text="jumpToMain"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

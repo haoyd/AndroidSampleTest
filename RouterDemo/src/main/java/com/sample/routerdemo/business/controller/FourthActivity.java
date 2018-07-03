@@ -27,4 +27,9 @@ public class FourthActivity extends BaseActivity {
         }
 
     }
+
+    public void jumpToMain(View view) {
+        RouterManager.startMainPage();
+
+    }
 }

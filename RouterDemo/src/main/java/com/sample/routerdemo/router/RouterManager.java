@@ -11,6 +11,12 @@ public class RouterManager {
     public static final String PAGE_THIRD = "/Main/ThirdPage";
     public static final String PAGE_FOURTH = "/Main/FourthPage";
 
+    public static void startMainPage() {
+        ARouter.getInstance()
+                .build(PAGE_MAIN)
+                .navigation();
+    }
+
     public static void startFirstPage() {
         ARouter.getInstance().build(PAGE_FIRST).navigation();
     }
