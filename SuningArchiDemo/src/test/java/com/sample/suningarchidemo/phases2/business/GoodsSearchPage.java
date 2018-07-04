@@ -30,12 +30,22 @@ public class GoodsSearchPage {
         Printer.print("返回请求结果", true);
         Printer.print("判断code msg", true);
         Printer.print("对返回的数据Model添加额外客显数据", true);
-        Printer.print("客户端显示数据");
 
     }
 
     private void searchGoods() {
         Printer.print("搜索商品：娃哈哈", true);
+        mHelper.searchGoods("娃哈哈", new GoodsSearchPageHelper.OnDataCallbackListener() {
+            @Override
+            public void onSucc(String data) {
+                Printer.print("客户端显示数据");
+            }
+
+            @Override
+            public void onFail() {
+
+            }
+        });
 
 
     }

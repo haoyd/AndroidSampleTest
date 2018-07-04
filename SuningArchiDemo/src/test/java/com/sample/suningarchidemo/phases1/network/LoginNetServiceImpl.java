@@ -1,5 +1,6 @@
 package com.sample.suningarchidemo.phases1.network;
 
+import com.sample.suningarchidemo.common.OnNetCallbackListener;
 import com.sample.suningarchidemo.common.Printer;
 
 public class LoginNetServiceImpl implements LoginNetService {

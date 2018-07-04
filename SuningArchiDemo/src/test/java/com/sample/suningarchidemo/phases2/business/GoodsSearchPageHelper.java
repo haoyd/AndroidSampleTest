@@ -2,6 +2,9 @@ package com.sample.suningarchidemo.phases2.business;
 
 import com.sample.suningarchidemo.common.Printer;
 
+/**
+ * 负责对网络请求前的数据进行处理
+ */
 public class GoodsSearchPageHelper {
 
     public void searchGoods(String key, OnDataCallbackListener listener) {

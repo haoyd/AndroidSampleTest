@@ -1,4 +1,4 @@
-package com.sample.suningarchidemo.phases1.network;
+package com.sample.suningarchidemo.common;
 
 public interface OnNetCallbackListener {
 
