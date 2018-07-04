@@ -1,8 +1,6 @@
 package com.sample.routerdemo.business.controller;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.ResultReceiver;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +8,7 @@ import android.view.View;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.sample.routerdemo.R;
+import com.sample.routerdemo.business.model.TestParcelable;
 import com.sample.routerdemo.router.RouterManager;
 
 @Route(path = RouterManager.PAGE_MAIN)
@@ -17,6 +16,14 @@ public class MainActivity extends BaseActivity {
 
     @Autowired
     String msg;
+
+    private TestParcelable testParcelable = new TestParcelable() {
+        @Override
+        public void onResult() {
+            super.onResult();
+            Log.d("MainActivity", ">>>>>>>>>>   回调成功");
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +57,8 @@ public class MainActivity extends BaseActivity {
         RouterManager.startFourthPage();
     }
 
+
     public void fifthActivity(View view) {
-        RouterManager.startFifthPage(new ResultReceiver(null) {
-            @Override
-            protected void onReceiveResult(int resultCode, Bundle resultData) {
-                if (resultCode == Activity.RESULT_OK) {
-                    Log.d("MainActivity", ">>>>>>>>>>   回调成功");
-                }
-            }
-        });
+        RouterManager.startFifthPage(testParcelable);
     }
 }

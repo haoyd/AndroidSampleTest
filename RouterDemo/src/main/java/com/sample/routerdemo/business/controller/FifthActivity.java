@@ -1,22 +1,26 @@
 package com.sample.routerdemo.business.controller;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.sample.routerdemo.R;
+import com.sample.routerdemo.business.model.TestParcelable;
 import com.sample.routerdemo.router.RouterManager;
 
 
 @Route(path = RouterManager.PAGE_FIFTH)
 public class FifthActivity extends AppCompatActivity {
 
-    private ResultReceiver mResultReceiver;
+//    @Autowired(name = "parcelable")
+//    private TestParcelable mResultReceiver;
+
+    @Autowired
+    TestParcelable pac;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +41,12 @@ public class FifthActivity extends AppCompatActivity {
     }
 
     public void callback(View view) {
-        if (mResultReceiver == null) {
+        if (pac == null) {
             Toast.makeText(FifthActivity.this, "没有获取到信息", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(FifthActivity.this, "回调", Toast.LENGTH_SHORT).show();
-            mResultReceiver.send(Activity.RESULT_OK, null);
+            Toast.makeText(FifthActivity.this, "有获取到数据", Toast.LENGTH_SHORT).show();
+//            mResultReceiver.send(Activity.RESULT_OK, null);
+            pac.onResult();
         }
 
     }

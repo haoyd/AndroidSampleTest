@@ -1,9 +1,8 @@
 package com.sample.routerdemo.router;
 
-import android.os.ResultReceiver;
-
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.sample.routerdemo.business.model.Person;
+import com.sample.routerdemo.business.model.TestParcelable;
 
 public class RouterManager {
 
@@ -46,8 +45,11 @@ public class RouterManager {
                 .navigation();
     }
 
-    public static void startFifthPage(ResultReceiver resultReceiver) {
+    public static void startFifthPage(TestParcelable resultReceiver) {
+        TestParcelable testParcelable = new TestParcelable("jack", 666);
+
         ARouter.getInstance().build(PAGE_FIFTH)
+                .withParcelable("pac", resultReceiver)
                 .navigation();
     }
 
