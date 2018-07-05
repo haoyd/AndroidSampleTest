@@ -9,17 +9,52 @@
     android:orientation="vertical"
     tools:context="com.zhimazg.testdemo.TestActivity">
 
-    <Button
-        android:id="@+id/btnStart"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="绑定服务"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="解绑服务"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="绑定服务"/>
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="解绑服务"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="showVideo1"
+                android:text="视频展示1"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="showVideo2"
+                android:text="视频展示2"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="showVideo3"
+                android:text="视频展示3"/>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
 
 
