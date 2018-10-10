@@ -1,11 +1,11 @@
 package com.sample.suningarchidemo.phases1.business;
 
 import com.sample.suningarchidemo.common.Printer;
-import com.sample.suningarchidemo.phases1.network.LoginNetService;
-import com.sample.suningarchidemo.phases1.network.LoginNetServiceImpl;
+import com.sample.suningarchidemo.phases1.proxy.network.LoginNetService;
+import com.sample.suningarchidemo.phases1.proxy.network.LoginNetServiceImpl;
 import com.sample.suningarchidemo.common.OnNetCallbackListener;
-import com.sample.suningarchidemo.phases1.storage.LoginStorageService;
-import com.sample.suningarchidemo.phases1.storage.LoginStorageServiceImpl;
+import com.sample.suningarchidemo.phases1.proxy.storage.LoginStorageService;
+import com.sample.suningarchidemo.phases1.proxy.storage.LoginStorageServiceImpl;
 
 public class LoginPage {
 

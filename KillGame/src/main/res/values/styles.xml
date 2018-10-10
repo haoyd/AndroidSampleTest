@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="StartupStyle" parent="@android:style/Animation.Activity">
+        <!--<item name="android:windowBackground">@mipmap/ic_launcher</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:activityOpenEnterAnimation">@anim/anim_page_startup</item>-->
+        <!--<item name="android:activityOpenEnterAnimation">@anim/in_from_left</item>-->
+        <item name="android:windowEnterAnimation">@anim/anim_page_startup</item>
+    </style>
+
+</resources>

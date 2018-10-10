@@ -54,7 +54,7 @@ public class ExampleUnitTest {
 //        singleClient();
 
         //建造者模式
-//        builderClient();
+        builderClient();
 
         //策略模式
 //        strategyClient();
@@ -66,7 +66,7 @@ public class ExampleUnitTest {
 //        decoration();
 
         //代理模式
-        proxyClient();
+//        proxyClient();
 
         //工厂方法模式
 //        factoryMethodClient();
