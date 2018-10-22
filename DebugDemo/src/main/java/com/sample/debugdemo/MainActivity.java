@@ -8,8 +8,11 @@ import android.widget.AdapterView;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     public static final String[] menus = {
-        "for循环调试"
+            "for循环调试",
+            "计算表达式"
     };
+
+    public static final int[] testData = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     private MenuListView listView;
 
@@ -29,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 0:
                 forTest();
                 break;
+            case 1:
+//                int result = sumSelf(20);
+                int a = 10;
+                int b = 20;
+                break;
         }
     }
 
@@ -36,5 +44,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         for (int i =0; i < 10; i++) {
             String s = "i:  " + i;
         }
+    }
+
+
+    private int sumSelf(int num) {
+        int result = 0;
+
+        for (int i = 0; i < num; i++) {
+            result += i;
+        }
+
+        return result;
     }
 }
