@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             "计算表达式",
             "日志输出",
             "特殊log技巧",
-            "查看错误日志"
+            "查看错误日志",
+            "Android Profiler"
     };
 
     public static final int[] testData = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -57,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         for (int i =0; i < 10; i++) {
             String s = "i:  " + i;
         }
-
     }
 
     private int sumSelf(int num) {
