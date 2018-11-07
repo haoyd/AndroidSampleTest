@@ -34,5 +34,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     //友盟统计
-    implementation 'com.umeng.analytics:analytics:latest.integration'
+    implementation 'com.umeng.analytics:analytics:6.1.4'
 }
