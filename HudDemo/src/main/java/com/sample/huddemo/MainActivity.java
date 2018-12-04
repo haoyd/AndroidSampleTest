@@ -1,6 +1,7 @@
 package com.sample.huddemo;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kaopiz.kprogresshud.KProgressHUD;
@@ -48,6 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button customColor = (Button) findViewById(R.id.custom_color_animate);
         customColor.setOnClickListener(this);
+
+        Button onlyText = findViewById(R.id.custom_only_text);
+        onlyText.setOnClickListener(this);
     }
 
     private KProgressHUD hud;
@@ -131,6 +137,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
                         .setWindowColor(getResources().getColor(R.color.colorPrimary))
                         .setAnimationSpeed(2);
+                scheduleDismiss();
+                break;
+            case R.id.custom_only_text:
+                TextView textView = new TextView(this);
+                textView.setText("");
+                textView.setTextColor(Color.parseColor("#ffffff"));
+
+                View emptyView = new View(this);
+                emptyView.setLayoutParams(new LinearLayout.LayoutParams(1, 1));
+                hud = KProgressHUD.create(this)
+                        .setCustomView(textView)
+                        .setLabel("你好")
+                        .show();
+
                 scheduleDismiss();
                 break;
         }
