@@ -25,4 +25,5 @@ public class SealView extends CreateSeal {
         SealView s = new SealView(width, content, bitmap);
         return s.getBitmap();
     }
+
 }
