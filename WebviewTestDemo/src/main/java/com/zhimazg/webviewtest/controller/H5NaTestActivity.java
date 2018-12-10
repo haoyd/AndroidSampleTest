@@ -1,9 +1,9 @@
 package com.zhimazg.webviewtest.controller;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.zhimazg.webviewtest.R;
 
-public class H5NaTestActivity extends Activity {
+public class H5NaTestActivity extends AppCompatActivity {
 
 
     private WebView webView;

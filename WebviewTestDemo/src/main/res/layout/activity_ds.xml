@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.DSActivity">
+
+    <wendu.dsbridge.DWebView
+        android:id="@+id/dwebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorAccent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textAllCaps="false"
+                android:text="同步调用JS方法"
+                android:onClick="buttonClick"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textAllCaps="false"
+                android:text="异步调用js方法"
+                android:onClick="异步回调"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textAllCaps="false"
+                android:text="检测js方法存在"
+                android:onClick="检测是否存在方法"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

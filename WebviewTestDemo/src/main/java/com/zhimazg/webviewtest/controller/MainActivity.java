@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +15,7 @@ import com.zhimazg.webviewtest.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private Activity mActivity;
     private ListView listView;
@@ -47,6 +48,7 @@ public class MainActivity extends Activity {
         pages.add("直接打开Url");
         pages.add("WebView设置");
         pages.add("WebView适应内容高度");
+        pages.add("DSBridge测试");
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, pages);
         listView.setAdapter(adapter);
@@ -74,6 +76,9 @@ public class MainActivity extends Activity {
                     }
                     case 3: {
                         startActivity(new Intent(mActivity, ListWebviewActivity.class));
+                    }
+                    case 4: {
+                        startActivity(new Intent(mActivity, DSActivity.class));
                     }
                 }
             }

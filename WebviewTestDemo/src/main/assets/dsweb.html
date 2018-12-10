@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DSBridge测试</title>
+
+    <script src="https://unpkg.com/dsbridge@3.1.3/dist/dsbridge.js"></script>
+    <script>
+        syncWork();
+
+
+//        //        window.addEventListener('load',function () {
+//        //            setTimeout(function () {
+//        //                alert(123);
+//        //            }, 1000);
+//        //        });
+//
+//        setTimeout(function () {
+//            alert(123);
+//            //syncWork();
+//        }, 3000);
+
+        //注册 javascript API
+        function registSyncApi() {
+            dsBridge.register('addValue', function (l, r) {
+                return l + r;
+            })
+            alert("注册成功");
+        }
+
+        //注册 javascript API
+        function registAsyncApi() {
+            dsBridge.registerAsyn('append', function (arg1, arg2, arg3, responseCallback) {
+                responseCallback(arg1 + " " + arg2 + " " + arg3);
+            })
+            alert("注册成功");
+        }
+
+        //同步调用
+        function syncWork() {
+            var str = dsBridge.call("testSyn", "testSyn");
+            alert(str);
+        }
+
+        //异步调用
+        function asyncWork() {
+            dsBridge.call("testAsyn", "testAsyn", function (v) {
+                alert(v);
+            })
+        }
+
+        //异步调用
+        function processCall() {
+            dsBridge.call("callProgress", function (value) {
+                document.getElementById("progress").innerText = "JS显示Native进度回调事件 : " + (value * 10) + "%";
+            })
+        }
+
+        function checkNativeMethod() {
+            var result = dsBridge.hasNativeMethod('testAsyn');
+            alert(result);
+        }
+
+    </script>
+
+    <style>
+        .textStyle {
+            width: 100%;
+            height: 100px;
+            background: gray;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 30px
+        }
+    </style>
+</head>
+<body>
+<button class="textStyle" onclick="registSyncApi()">JS为Native注册同步事件</button>
+<button class="textStyle" onclick="registAsyncApi()">JS为Native注册异步事件</button>
+<button class="textStyle" onclick="syncWork()">JS同步调用Native</button>
+<button class="textStyle" onclick="asyncWork()">JS异步调用Native</button>
+<button id="progress" class="textStyle" onclick="processCall()">JS显示Native进度回调事件</button>
+<button class="textStyle" onclick="checkNativeMethod()">检测Native方法是否存在</button>
+</body>
+</html>

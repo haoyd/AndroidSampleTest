@@ -1,7 +1,7 @@
 package com.zhimazg.webviewtest.controller;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -10,7 +10,7 @@ import android.widget.ListView;
 import com.zhimazg.webviewtest.R;
 import com.zhimazg.webviewtest.view.CustomWebView;
 
-public class ListWebviewActivity extends Activity {
+public class ListWebviewActivity extends AppCompatActivity {
 
     private ListView listView;
 
