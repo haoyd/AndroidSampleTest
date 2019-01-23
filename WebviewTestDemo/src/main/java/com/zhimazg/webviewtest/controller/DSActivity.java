@@ -58,7 +58,6 @@ public class DSActivity extends AppCompatActivity {
             @Override
             public void onValue(String retValue) {
                 ToastBox.showBottom(context, "结果为：" + retValue);
-
             }
         });
     }
